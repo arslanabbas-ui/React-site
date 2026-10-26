@@ -58,7 +58,7 @@ export const articles = [
     slug: 'the-case-for-a-personal-map-of-your-neighborhood', category: 'Travel', author: 'Mara Ellis', date: '2026-06-18', minutes: 4,
     title: 'The Case for Making a Personal Map of Your Neighborhood',
     excerpt: 'Save the places that make daily life more interesting, one small discovery at a time.',
-    sections: [['Map your ordinary favorites', 'Add the bench with afternoon shade, the bakery that opens early, and the shortcut that avoids traffic. A personal map is useful because it holds details no city guide will prioritize.'], ['Use it to plan a better errand day', 'Group stops by area, then leave room for a detour. You will spend less time zigzagging across town and notice more of the places close to home.']],
+    sections: [['Map your ordinary favorites', 'Add the bench with afternoon shade, the bakery that opens early, and the shortcut that avoids traffic. A personal map is useful because it holds details no city guide will prioritize.'], ['Use it to plan a better errand day', 'Group stops by area, then leave room for a detour. You will spend less time zigzagging across town and notice more of the places close to home.'], ['What to Include on Your Neighborhood Map', 'Choose places you actually return to, then keep the map focused on details that make ordinary errands easier.']],
     related: ['a-little-maintenance-plan-for-a-calmer-home', 'an-unfussy-guide-to-digital-photo-backups'],
   },
   {
