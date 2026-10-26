@@ -2,6 +2,8 @@
 
 An independent Vite + React sample blog for testing JavaScript-rendering crawlers. It contains no SearchAtlas, Pixel, analytics, or third-party optimization scripts.
 
+> Temporary pull request created so the GitHub workflow can be reviewed. It is not intended for merge.
+
 ## Run locally
 
 ```bash
