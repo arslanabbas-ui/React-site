@@ -23,7 +23,7 @@ function setMeta(name, content, property = false) {
 function usePageMetadata(article) {
   useEffect(() => {
     const title = article ? `${article.title} | ${site.name}` : `${site.name} — ${site.description}`
-    const description = article?.excerpt ?? 'Tideway Notes is a sample React publication for JavaScript-rendering crawler tests.'
+    const description = article?.excerpt ?? 'Tideway Notes shares practical, useful ideas for everyday life.'
     const url = `${site.url}${article ? articlePath(article.slug) : '/'}`
     document.title = title
     setMeta('description', description)
@@ -48,17 +48,23 @@ function Card({ article }) { return <article className="card"><p className="eyeb
 function Home() {
   const [query, setQuery] = useState(''); const [category, setCategory] = useState('All')
   const visible = useMemo(() => articles.filter((article) => (category === 'All' || article.category === category) && `${article.title} ${article.excerpt}`.toLowerCase().includes(query.toLowerCase())), [query, category])
-  return <main className="shell"><p className="eyebrow">Field notes for ordinary days</p><h1>A little more ease, one useful idea at a time.</h1><p className="intro">A ten-article React sample blog with client-side navigation, searchable content, and route-aware SEO metadata.</p><section className="controls" aria-label="Article filters"><label><span>Search articles</span><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Try “home” or “desk”" /></label><div className="filters" aria-label="Categories">{['All', ...categories].map((item) => <button className={category === item ? 'active' : ''} key={item} onClick={() => setCategory(item)}>{item}</button>)}</div></section><p className="count">{visible.length} {visible.length === 1 ? 'article' : 'articles'}</p><section className="grid">{visible.map((article) => <Card article={article} key={article.slug} />)}</section>{!visible.length && <div className="empty"><h2>No articles found</h2><p>Try a different word or choose another category.</p></div>}</main>
+  usePageMetadata()
+  return <div><Header /><main><div className="shell"><div className="home-header"><h1>Welcome to Tideway Notes</h1><p>A sample publication to test rendering and indexing by search engine crawlers.</p><div className="search"><input placeholder="Search articles" value={query} onChange={(e) => setQuery(e.target.value)} /></div><div className="categories"><button onClick={() => setCategory('All')} className={category === 'All' ? 'active' : ''}>All</button>{categories.map((c) => <button key={c} onClick={() => setCategory(c)} className={category === c ? 'active' : ''}>{c}</button>)}</div></div><div className="cards">{visible.map((article) => <Card key={article.slug} article={article} />)}</div></div></main><Footer /></div>
 }
 
-function Article({ article }) { const related = article.related.map((slug) => articles.find((item) => item.slug === slug)).filter(Boolean); return <main className="shell article-page"><article><p className="eyebrow">{article.category}</p><h1>{article.title}</h1><p className="deck">{article.excerpt}</p><p className="byline">By {article.author} · {formatDate(article.date)} · {article.minutes} min read</p>{article.sections.map(([heading, text]) => <section key={heading}><h2>{heading}</h2><p>{text}</p></section>)}<Link to="/" className="back">← All articles</Link></article><aside><p className="eyebrow">Keep exploring</p>{related.map((item) => <Link to={articlePath(item.slug)} key={item.slug}>{item.title}</Link>)}</aside></main> }
-function NotFound() { return <main className="shell not-found"><p className="eyebrow">404</p><h1>This tide has gone out.</h1><p>The page you requested is not part of this sample publication.</p><Link to="/" className="back">← Return home</Link></main> }
+function Article() {
+  const [article, setArticle] = useState()
+  useEffect(() => { const slug = window.location.pathname.split('/')[2]; setArticle(articles.find((a) => a.slug === slug)) }, [])
+  usePageMetadata(article)
+  if (!article) return <div><Header /><main><div className="shell"><h1>Article not found</h1></div></main><Footer /></div>
+  const related = article.related.map((slug) => articles.find((a) => a.slug === slug))
+  return <div><Header /><main><div className="shell"><article className="article"><h1>{article.title}</h1><p className="byline">{formatDate(article.date)} · {article.minutes} min read by {article.author}</p><div className="sections">{article.sections.map((section, i) => <section key={i}><h2>{section[0]}</h2><p>{section[1]}</p></section>)}</div></article><div className="related"><h2>Related</h2><div className="cards">{related.map((a) => <Card key={a.slug} article={a} />)}</div></div></div></main><Footer /></div>
+}
 
-export default function App() {
+function Router() {
   const [path, setPath] = useState(window.location.pathname)
-  useEffect(() => { const listener = () => setPath(window.location.pathname); window.addEventListener('popstate', listener); return () => window.removeEventListener('popstate', listener) }, [])
-  const match = path.match(/^\/articles\/([^/]+)\/?$/); const article = match ? articles.find((item) => item.slug === match[1]) : null
-  const isHome = path === '/' || path === ''
-  usePageMetadata(article ?? undefined)
-  return <><Header />{isHome ? <Home /> : article ? <Article article={article} /> : <NotFound />}<Footer /></>
+  useEffect(() => { const handler = () => setPath(window.location.pathname); window.addEventListener('popstate', handler); return () => window.removeEventListener('popstate', handler) }, [])
+  return path === '/' ? <Home /> : <Article />
 }
+
+export default Router
