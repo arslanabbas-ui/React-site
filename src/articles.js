@@ -7,7 +7,7 @@ export const site = {
 export const articles = [
   {
     slug: 'make-a-weeknight-dinner-plan-that-survives-thursday', category: 'Food', author: 'Mara Ellis', date: '2026-08-05', minutes: 5,
-    title: 'Make a Weeknight Dinner Plan That Still Works on Thursday',
+    title: 'Make a Weeknight Dinner Plan That Works on Busy Thursdays',
     excerpt: 'A flexible three-part plan for feeding yourself when the week gets busy.',
     sections: [['Plan ingredients, not perfect meals', 'Choose a grain, two vegetables, a protein, and one bright sauce. Those building blocks can become bowls, wraps, or a quick tray bake without turning Wednesday into a recipe project.'], ['Keep one dinner deliberately easy', 'Put a freezer meal, eggs on toast, or a favorite takeout option on the calendar before you need it. A backup plan is not a failure of meal planning; it is the piece that makes the plan believable.']],
     related: ['small-kitchen-tools-that-earn-their-drawer-space', 'how-to-build-a-reading-habit-without-a-reading-list'],
@@ -51,7 +51,7 @@ export const articles = [
     slug: 'an-unfussy-guide-to-digital-photo-backups', category: 'Technology', author: 'Lena Moss', date: '2026-06-25', minutes: 6,
     title: 'An Unfussy Guide to Digital Photo Backups',
     excerpt: 'A simple two-location routine that protects the pictures you care about.',
-    sections: [['Keep the automatic copy on', 'Use your phone or computer’s automatic cloud backup as the first layer. The useful backup is the one that runs when you have forgotten to think about it.'], ['Make one separate archive', 'Once or twice a year, copy your full library to an external drive stored away from your main computer. Label it with the date and test that a few photos open normally.']],
+    sections: [['Keep the automatic copy on', 'Use your phone or computer's automatic cloud backup as the first layer. The useful backup is the one that runs when you have forgotten to think about it.'], ['Make one separate archive', 'Once or twice a year, copy your full library to an external drive stored away from your main computer. Label it with the date and test that a few photos open normally.']],
     related: ['how-to-choose-a-monitor-for-a-smaller-desk', 'the-case-for-a-personal-map-of-your-neighborhood'],
   },
   {
