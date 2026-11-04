@@ -22,8 +22,8 @@ function setMeta(name, content, property = false) {
 
 function usePageMetadata(article) {
   useEffect(() => {
-    const title = article ? `${article.title} | ${site.name}` : `${site.name} — ${site.description}`
-    const description = article?.excerpt ?? 'Tideway Notes is a sample React publication for JavaScript-rendering crawler tests.'
+    const title = article ? `${article.title} | ${site.name}` : `${site.name} — Practical ideas for everyday life`
+    const description = article?.excerpt ?? 'Tideway Notes shares practical, useful ideas for everyday life.'
     const url = `${site.url}${article ? articlePath(article.slug) : '/'}`
     document.title = title
     setMeta('description', description)
@@ -52,6 +52,7 @@ function Home() {
 }
 
 function Article({ article }) { const related = article.related.map((slug) => articles.find((item) => item.slug === slug)).filter(Boolean); return <main className="shell article-page"><article><p className="eyebrow">{article.category}</p><h1>{article.title}</h1><p className="deck">{article.excerpt}</p><p className="byline">By {article.author} · {formatDate(article.date)} · {article.minutes} min read</p>{article.sections.map(([heading, text]) => <section key={heading}><h2>{heading}</h2><p>{text}</p></section>)}<Link to="/" className="back">← All articles</Link></article><aside><p className="eyebrow">Keep exploring</p>{related.map((item) => <Link to={articlePath(item.slug)} key={item.slug}>{item.title}</Link>)}</aside></main> }
+
 function NotFound() { return <main className="shell not-found"><p className="eyebrow">404</p><h1>This tide has gone out.</h1><p>The page you requested is not part of this sample publication.</p><Link to="/" className="back">← Return home</Link></main> }
 
 export default function App() {
