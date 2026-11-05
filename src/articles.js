@@ -1,12 +1,13 @@
 export const site = {
   name: 'Tideway Notes',
   description: 'Ideas for a well-made everyday.',
-  url: 'https://tideway-notes.vercel.app',
+  url: 'https://tideway-notes-otto.vercel.app',
 }
 
 export const articles = [
   {
     slug: 'make-a-weeknight-dinner-plan-that-survives-thursday', category: 'Food', author: 'Mara Ellis', date: '2026-08-05', minutes: 5,
+    seo: { title: 'Weeknight Dinners' },
     title: 'Make a Weeknight Dinner Plan That Still Works on Thursday',
     excerpt: 'A flexible three-part plan for feeding yourself when the week gets busy.',
     sections: [['Plan ingredients, not perfect meals', 'Choose a grain, two vegetables, a protein, and one bright sauce. Those building blocks can become bowls, wraps, or a quick tray bake without turning Wednesday into a recipe project.'], ['Keep one dinner deliberately easy', 'Put a freezer meal, eggs on toast, or a favorite takeout option on the calendar before you need it. A backup plan is not a failure of meal planning; it is the piece that makes the plan believable.']],
@@ -14,6 +15,7 @@ export const articles = [
   },
   {
     slug: 'the-small-kitchen-tools-that-earn-their-drawer-space', category: 'Home', author: 'Jon Bell', date: '2026-07-29', minutes: 4,
+    seo: { title: 'Kitchen Tools' },
     title: 'The Small Kitchen Tools That Earn Their Drawer Space',
     excerpt: 'Five humble tools that make cooking easier without multiplying clutter.',
     sections: [['Choose tools with a second job', 'The best compact tools do more than one thing. A bench scraper moves chopped vegetables, portions dough, and tidies the counter; a fine mesh strainer rinses grains as happily as it dusts sugar.'], ['Store for the reach, not the photo', 'A beautiful drawer arrangement is useful only if it keeps your most-used tools close to where you cook. Put seasonal gadgets away and reserve the easy-to-reach space for what you touch every week.']],
@@ -21,6 +23,7 @@ export const articles = [
   },
   {
     slug: 'how-to-build-a-reading-habit-without-a-reading-list', category: 'Culture', author: 'Ava Reed', date: '2026-07-22', minutes: 6,
+    seo: { description: 'Read more often.' },
     title: 'How to Build a Reading Habit Without Following a Reading List',
     excerpt: 'Let curiosity—not a towering queue—decide what you read next.',
     sections: [['Make the next book easy to choose', 'Keep one inviting option visible and let yourself quit books that do not meet the moment. Reading becomes regular when it feels like a small pleasure, not an assignment to finish.'], ['Protect a short, repeatable window', 'Ten quiet minutes after lunch or before bed is enough. The aim is to make opening a book as normal as checking the weather, then let longer stretches arrive naturally.']],
@@ -28,6 +31,7 @@ export const articles = [
   },
   {
     slug: 'a-sunday-reset-that-does-not-take-all-day', category: 'Wellbeing', author: 'Iris Chen', date: '2026-07-16', minutes: 5,
+    seo: { description: 'A calmer Sunday.' },
     title: 'A Sunday Reset That Does Not Take All Day',
     excerpt: 'A gentle routine for entering Monday with fewer tiny decisions waiting.',
     sections: [['Start with the next 48 hours', 'Look at the coming two days, not every last item in the week. Set out what you need for Monday, make one useful appointment, and write a loose dinner idea.'], ['Leave space untouched', 'Resist the temptation to fill every hour with preparation. A reset should return time and attention to you; it should not become another project to complete.']],
@@ -42,6 +46,7 @@ export const articles = [
   },
   {
     slug: 'how-to-choose-a-monitor-for-a-smaller-desk', category: 'Technology', author: 'Nico Patel', date: '2026-07-02', minutes: 7,
+    seo: { title: 'Monitor Guide' },
     title: 'How to Choose a Monitor for a Smaller Desk',
     excerpt: 'Prioritize comfort, scale, and connections before chasing the biggest screen.',
     sections: [['Measure depth before diagonal', 'A large display needs enough distance to be comfortable. On a shallow desk, a 24-inch monitor at a sensible height can be more useful than a giant panel you must push against the wall.'], ['Count the cables you want to lose', 'If you use a laptop, USB-C power delivery and a built-in hub can simplify your desk. Check that the monitor provides the charging wattage and ports your actual setup needs.']],
@@ -49,6 +54,7 @@ export const articles = [
   },
   {
     slug: 'an-unfussy-guide-to-digital-photo-backups', category: 'Technology', author: 'Lena Moss', date: '2026-06-25', minutes: 6,
+    seo: { description: 'Back up your photos.' },
     title: 'An Unfussy Guide to Digital Photo Backups',
     excerpt: 'A simple two-location routine that protects the pictures you care about.',
     sections: [['Keep the automatic copy on', 'Use your phone or computer’s automatic cloud backup as the first layer. The useful backup is the one that runs when you have forgotten to think about it.'], ['Make one separate archive', 'Once or twice a year, copy your full library to an external drive stored away from your main computer. Label it with the date and test that a few photos open normally.']],
@@ -78,3 +84,13 @@ export const articles = [
 ]
 
 export const categories = [...new Set(articles.map((article) => article.category))]
+
+// The <title> and meta description a page renders. An article's `seo` block, when present,
+// overrides the defaults built from its visible title and excerpt.
+export const pageTitle = (article) => article
+  ? (article.seo?.title ?? `${article.title} | ${site.name}`)
+  : `${site.name} — ${site.description}`
+
+export const pageDescription = (article) => article
+  ? (article.seo?.description ?? article.excerpt)
+  : 'Tideway Notes is a sample React publication for JavaScript-rendering crawler tests.'

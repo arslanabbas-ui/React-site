@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
-import { articles, categories, site } from './articles.js'
+import { articles, categories, pageDescription, pageTitle, site } from './articles.js'
 
 const formatDate = (date) => new Intl.DateTimeFormat('en', { month: 'long', day: 'numeric', year: 'numeric' }).format(new Date(`${date}T12:00:00`))
 const articlePath = (slug) => `/articles/${slug}`
@@ -22,8 +22,8 @@ function setMeta(name, content, property = false) {
 
 function usePageMetadata(article) {
   useEffect(() => {
-    const title = article ? `${article.title} | ${site.name}` : `${site.name} — ${site.description}`
-    const description = article?.excerpt ?? 'Tideway Notes is a sample React publication for JavaScript-rendering crawler tests.'
+    const title = pageTitle(article)
+    const description = pageDescription(article)
     const url = `${site.url}${article ? articlePath(article.slug) : '/'}`
     document.title = title
     setMeta('description', description)

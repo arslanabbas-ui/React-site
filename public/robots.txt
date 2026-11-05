@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://tideway-notes.vercel.app/sitemap.xml
+Sitemap: https://tideway-notes-otto.vercel.app/sitemap.xml
