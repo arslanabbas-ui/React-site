@@ -46,7 +46,7 @@ export const articles = [
   },
   {
     slug: 'how-to-choose-a-monitor-for-a-smaller-desk', category: 'Technology', author: 'Nico Patel', date: '2026-07-02', minutes: 7,
-    seo: { title: 'Monitor Guide' },
+    seo: { title: 'Monitor for a Small Desk: Size & Setup | Tideway Notes' },
     title: 'How to Choose a Monitor for a Smaller Desk',
     excerpt: 'Prioritize comfort, scale, and connections before chasing the biggest screen.',
     sections: [['Measure depth before diagonal', 'A large display needs enough distance to be comfortable. On a shallow desk, a 24-inch monitor at a sensible height can be more useful than a giant panel you must push against the wall.'], ['Count the cables you want to lose', 'If you use a laptop, USB-C power delivery and a built-in hub can simplify your desk. Check that the monitor provides the charging wattage and ports your actual setup needs.']],
