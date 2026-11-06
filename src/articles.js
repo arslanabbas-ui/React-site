@@ -7,7 +7,7 @@ export const site = {
 export const articles = [
   {
     slug: 'make-a-weeknight-dinner-plan-that-survives-thursday', category: 'Food', author: 'Mara Ellis', date: '2026-08-05', minutes: 5,
-    seo: { title: 'Weeknight Dinners' },
+    seo: { title: 'Weeknight Dinner Plans for Easier Thursdays | Tideway Notes' },
     title: 'Make a Weeknight Dinner Plan That Still Works on Thursday',
     excerpt: 'A flexible three-part plan for feeding yourself when the week gets busy.',
     sections: [['Plan ingredients, not perfect meals', 'Choose a grain, two vegetables, a protein, and one bright sauce. Those building blocks can become bowls, wraps, or a quick tray bake without turning Wednesday into a recipe project.'], ['Keep one dinner deliberately easy', 'Put a freezer meal, eggs on toast, or a favorite takeout option on the calendar before you need it. A backup plan is not a failure of meal planning; it is the piece that makes the plan believable.']],
