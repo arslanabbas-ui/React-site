@@ -86,7 +86,7 @@ export const articles = [
 export const categories = [...new Set(articles.map((article) => article.category))]
 
 // The <title> and meta description a page renders. An article's `seo` block, when present,
-// overrides the defaults built from its visible title and excerpt.
+// overrides the defaults built from its visible title and excerpt.    
 export const pageTitle = (article) => article
   ? (article.seo?.title ?? `${article.title} | ${site.name}`)
   : `${site.name} — ${site.description}`
