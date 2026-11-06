@@ -31,7 +31,7 @@ export const articles = [
   },
   {
     slug: 'a-sunday-reset-that-does-not-take-all-day', category: 'Wellbeing', author: 'Iris Chen', date: '2026-07-16', minutes: 5,
-    seo: { description: 'A calmer Sunday.' },
+    seo: { description: 'A gentle Sunday reset can prepare you for the next 48 hours without taking over your day. Discover simple steps that leave room to rest and unwind.' },
     title: 'A Sunday Reset That Does Not Take All Day',
     excerpt: 'A gentle routine for entering Monday with fewer tiny decisions waiting.',
     sections: [['Start with the next 48 hours', 'Look at the coming two days, not every last item in the week. Set out what you need for Monday, make one useful appointment, and write a loose dinner idea.'], ['Leave space untouched', 'Resist the temptation to fill every hour with preparation. A reset should return time and attention to you; it should not become another project to complete.']],
