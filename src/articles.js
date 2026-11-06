@@ -7,7 +7,7 @@ export const site = {
 export const articles = [
   {
     slug: 'make-a-weeknight-dinner-plan-that-survives-thursday', category: 'Food', author: 'Mara Ellis', date: '2026-08-05', minutes: 5,
-    seo: { title: 'Weeknight Dinners' },
+    seo: { title: 'Weeknight Dinner Plans for Easier Thursdays | Tideway Notes' },
     title: 'Make a Weeknight Dinner Plan That Still Works on Thursday',
     excerpt: 'A flexible three-part plan for feeding yourself when the week gets busy.',
     sections: [['Plan ingredients, not perfect meals', 'Choose a grain, two vegetables, a protein, and one bright sauce. Those building blocks can become bowls, wraps, or a quick tray bake without turning Wednesday into a recipe project.'], ['Keep one dinner deliberately easy', 'Put a freezer meal, eggs on toast, or a favorite takeout option on the calendar before you need it. A backup plan is not a failure of meal planning; it is the piece that makes the plan believable.']],
@@ -46,7 +46,7 @@ export const articles = [
   },
   {
     slug: 'how-to-choose-a-monitor-for-a-smaller-desk', category: 'Technology', author: 'Nico Patel', date: '2026-07-02', minutes: 7,
-    seo: { title: 'Monitor Guide' },
+    seo: { title: 'Monitor for a Small Desk: Size & Setup | Tideway Notes' },
     title: 'How to Choose a Monitor for a Smaller Desk',
     excerpt: 'Prioritize comfort, scale, and connections before chasing the biggest screen.',
     sections: [['Measure depth before diagonal', 'A large display needs enough distance to be comfortable. On a shallow desk, a 24-inch monitor at a sensible height can be more useful than a giant panel you must push against the wall.'], ['Count the cables you want to lose', 'If you use a laptop, USB-C power delivery and a built-in hub can simplify your desk. Check that the monitor provides the charging wattage and ports your actual setup needs.']],
