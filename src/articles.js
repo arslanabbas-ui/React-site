@@ -15,7 +15,7 @@ export const articles = [
   },
   {
     slug: 'the-small-kitchen-tools-that-earn-their-drawer-space', category: 'Home', author: 'Jon Bell', date: '2026-07-29', minutes: 4,
-    seo: { title: 'Kitchen Tools' },
+    seo: { title: 'Small Kitchen Tools That Save Drawer Space | Tideway Notes' },
     title: 'The Small Kitchen Tools That Earn Their Drawer Space',
     excerpt: 'Five humble tools that make cooking easier without multiplying clutter.',
     sections: [['Choose tools with a second job', 'The best compact tools do more than one thing. A bench scraper moves chopped vegetables, portions dough, and tidies the counter; a fine mesh strainer rinses grains as happily as it dusts sugar.'], ['Store for the reach, not the photo', 'A beautiful drawer arrangement is useful only if it keeps your most-used tools close to where you cook. Put seasonal gadgets away and reserve the easy-to-reach space for what you touch every week.']],
