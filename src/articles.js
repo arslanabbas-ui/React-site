@@ -31,7 +31,7 @@ export const articles = [
   },
   {
     slug: 'a-sunday-reset-that-does-not-take-all-day', category: 'Wellbeing', author: 'Iris Chen', date: '2026-07-16', minutes: 5,
-    seo: { description: 'Create a quick Sunday reset routine to tidy, plan, and prepare for the week without sacrificing your weekend. Discover simple steps for a calmer start to' },
+    seo: { description: 'A calmer Sunday.' },
     title: 'A Sunday Reset That Does Not Take All Day',
     excerpt: 'A gentle routine for entering Monday with fewer tiny decisions waiting.',
     sections: [['Start with the next 48 hours', 'Look at the coming two days, not every last item in the week. Set out what you need for Monday, make one useful appointment, and write a loose dinner idea.'], ['Leave space untouched', 'Resist the temptation to fill every hour with preparation. A reset should return time and attention to you; it should not become another project to complete.']],
@@ -54,7 +54,7 @@ export const articles = [
   },
   {
     slug: 'an-unfussy-guide-to-digital-photo-backups', category: 'Technology', author: 'Lena Moss', date: '2026-06-25', minutes: 6,
-    seo: { description: 'Digital photo backups: Learn how to protect precious memories with a simple, reliable system, from redundant copies to consistent habits. Read the guide now!' },
+    seo: { description: 'Back up your photos.' },
     title: 'An Unfussy Guide to Digital Photo Backups',
     excerpt: 'A simple two-location routine that protects the pictures you care about.',
     sections: [['Keep the automatic copy on', 'Use your phone or computer’s automatic cloud backup as the first layer. The useful backup is the one that runs when you have forgotten to think about it.'], ['Make one separate archive', 'Once or twice a year, copy your full library to an external drive stored away from your main computer. Label it with the date and test that a few photos open normally.']],
