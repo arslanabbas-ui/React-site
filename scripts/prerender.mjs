@@ -6,7 +6,7 @@
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { articles, pageDescription, pageTitle } from '../src/articles.js'
+import { articles, pageDescription, pageTitle, site } from '../src/articles.js'
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..')
 const dist = join(root, 'dist')
@@ -15,12 +15,23 @@ const shell = readFileSync(join(dist, 'index.html'), 'utf8')
 const escapeHtml = (value) => String(value)
   .replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll('<', '&lt;').replaceAll('>', '&gt;')
 
+function pageUrl(article) {
+  return `${site.url}${article ? `/articles/${article.slug}` : '/'}`
+}
+
 function withHead(html, article) {
   const titled = html.replace(/<title>[\s\S]*?<\/title>/, `<title>${escapeHtml(pageTitle(article))}</title>`)
-  return titled.replace(
+  const described = titled.replace(
     /<meta name="description" content="[^"]*"\s*\/?>/,
     `<meta name="description" content="${escapeHtml(pageDescription(article))}" />`,
   )
+  // One self-referencing canonical per page, in the static HTML so a crawler that does not
+  // run JavaScript still sees it. App.jsx sets the same href at runtime.
+  const canonical = `<link rel="canonical" href="${escapeHtml(pageUrl(article))}" />`
+  if (/<link rel="canonical"[^>]*>/.test(described)) {
+    return described.replace(/<link rel="canonical"[^>]*>/, canonical)
+  }
+  return described.replace('</head>', `  ${canonical}\n</head>`)
 }
 
 // Plain links inside #root: React replaces them on load, crawlers without JavaScript follow them.
